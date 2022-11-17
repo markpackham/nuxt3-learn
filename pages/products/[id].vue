@@ -12,8 +12,9 @@ const uri = 'https://fakestoreapi.com/products/' + id
 // without the key we'd just end up each time with the very first product we fetched on every product url
 const { data: product } = await useFetch(uri, { key: id })
 
+// we need to add "fatal: true" so Error page will show not just for server errors but browser errors as well
 if (!product.value) {
-    throw createError({ statusCode: 404, statusMessage: 'Product not found' })
+    throw createError({ statusCode: 404, statusMessage: 'Product not found', fatal: true })
 }
 
 definePageMeta({
