@@ -8,6 +8,10 @@
 definePageMeta({
     layout: 'products'
 })
+
+// grab products from a fake store
+const { data: products } = await useFetch('https://fakestoreapi.com/products')
+
 </script>
 
 <style scoped>
