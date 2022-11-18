@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-const { data } = await useFetch('/api/ninja?name=Jim')
+const { data } = await useFetch('/api/ninja?name=Jim', { method: 'post', body: { age: 88 } })
 </script>
 
 <style scoped>
