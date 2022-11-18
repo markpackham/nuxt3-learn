@@ -1,7 +1,10 @@
 // This is the backend server
 
-export default defineEventHandler(() => {
+export default defineEventHandler((event) => {
+  // handle query params
+  const { name } = useQuery(event);
+
   return {
-    message: `Hello World I am from the server!`,
+    message: `Hello ${name} I am from the server!`,
   };
 });
